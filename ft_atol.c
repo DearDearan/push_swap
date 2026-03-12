@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lifranco <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:27:10 by lifranco          #+#    #+#             */
-/*   Updated: 2026/02/19 15:38:21 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/12 12:06:48 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ long long	ft_atol(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (res * 10) + (str[i] - '0');
 		if (res > (long)INT_MAX + 1)
 			return (res * isnega);
+		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
 	return (res * isnega);

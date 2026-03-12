@@ -12,7 +12,7 @@
 
 NAME	:= push_swap
 CC 		:= cc
-CFLAGS	:= -Wall -Wextra -Werror -Iinclude
+CFLAGS	:= -Wall -Wextra -Werror -Iinclude -g
 SRC = main.c \
 	init_stack.c \
 	butterfly.c \

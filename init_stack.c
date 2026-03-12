@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 15:15:02 by lifranco          #+#    #+#             */
-/*   Updated: 2026/01/27 16:58:57 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:15:29 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ void	init_stack(t_stack **stacka, long long *parsed, int size)
 	while (i < size)
 	{
 		node = new_node(parsed[i], index_cal(size, parsed[i], parsed));
+		if (!node)
+		{
+			write(2, "Error\n", 6);
+			return ;
+		}
 		add_stack(stacka, node);
 		i++;
 	}

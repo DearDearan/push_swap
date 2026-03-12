@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   butterfly.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lifranco <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 17:08:19 by lifranco          #+#    #+#             */
-/*   Updated: 2026/02/21 02:55:36 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/12 12:04:33 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static int	find_max(t_stack **stack)
 	int		max;
 	t_stack	*tmp;
 
-	tmp = *stack;
-	max = (*stack)->index;
 	if (!*stack)
 		return (-1);
+	tmp = *stack;
+	max = (*stack)->index;
 	while (tmp)
 	{
 		if (tmp->index > max)

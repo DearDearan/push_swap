@@ -6,11 +6,12 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:54:14 by lifranco          #+#    #+#             */
-/*   Updated: 2026/02/05 12:30:50 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:16:59 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 static void	free_all(t_stack **stacka, t_stack **stackb, long long *tab)
 {
@@ -43,7 +44,10 @@ static int	only_spaces(char **argv)
 	{
 		error = ft_strtrim(argv[i], " ");
 		if (!error)
+		{
+			write(2, "Error\n", 6);
 			return (1);
+		}
 		if (error[0] == '\0')
 		{
 			free(error);
@@ -72,7 +76,7 @@ int	main(int argc, char **argv)
 		|| only_spaces(argv) == 1)
 		return (1);
 	tab = parse(argv, &size);
-	if (check_double(tab, size) == 1 || check_overflow(tab, size))
+	if (!tab || check_double(tab, size) == 1 || check_overflow(tab, size))
 	{
 		free(tab);
 		return (1);

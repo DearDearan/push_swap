@@ -6,11 +6,14 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:26:03 by lifranco          #+#    #+#             */
-/*   Updated: 2026/01/27 16:56:33 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:33:40 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "include/libft/libft.h"
 #include "push_swap.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 static void	freetab(char **strs)
 {
@@ -65,7 +68,10 @@ static int	fill_array(long long *arr, char **argv)
 	{
 		tmp = ft_split(argv[i], ' ');
 		if (!tmp)
+		{
+			write(2, "Error\n", 6);
 			return (-1);
+		}
 		j = -1;
 		while (tmp[++j])
 			arr[k++] = ft_atol(tmp[j]);
@@ -87,7 +93,10 @@ long long	*parse(char **args, int *size)
 		return (NULL);
 	array = ft_calloc(*size, sizeof(long));
 	if (!array)
+	{
+		write(2, "Error\n", 6);
 		return (NULL);
+	}
 	error = fill_array(array, args);
 	if (error < 0)
 	{
