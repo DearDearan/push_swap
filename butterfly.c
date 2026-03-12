@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 17:08:19 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/12 12:04:33 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/12 15:21:10 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	butterfly(t_stack **stacka, t_stack **stackb, int size)
 {
 	int	chunk;
 
-	chunk = (size / 20) + 8;
+	chunk = (size / 20) + BASE_CHUNK;
 	butterfly_chunk(stacka, stackb, chunk);
 	sortb(stacka, stackb);
 }

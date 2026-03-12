@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 14:59:56 by lifranco          #+#    #+#             */
-/*   Updated: 2026/02/05 12:26:21 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/12 15:18:23 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 # include "include/libft/libft.h"
 # include <limits.h>
+# define BASE_CHUNK 8
 
 typedef struct s_stack
 {

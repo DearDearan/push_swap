@@ -91,7 +91,7 @@ long long	*parse(char **args, int *size)
 		return (NULL);
 	if (*size < 0)
 		return (NULL);
-	array = ft_calloc(*size, sizeof(long));
+	array = ft_calloc(*size, sizeof(long long));
 	if (!array)
 	{
 		write(2, "Error\n", 6);
